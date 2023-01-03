@@ -24,7 +24,10 @@ jobs:
         output_dir: "/test"
         input_dir: "/java"      
       deploy:
-        provider: pages:git
-        edge: true
-        on:
+        - provider: releases
+          edge: true
+          file_glob: true
+          file: sbom/python/**/*
+          skip_cleanup: true
+          on:
             branch: main
