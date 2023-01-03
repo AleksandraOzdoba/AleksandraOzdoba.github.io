@@ -1,0 +1,33 @@
+os: linux
+dist: focal
+language: java
+jdk:
+  - openjdk8
+jobs:
+  include: 
+  - name: “test123” # existing functionality
+    script: # existing functionality
+      - java -version
+  - name: “sbom”
+    script: # existing functionality
+      - java -version
+      - cd test
+      - cat java/java_bom.json
+    addons:
+      sbom:
+        on:
+          branch: 'main'
+          pr: false
+        # condition: false
+        run_phase: "before_script"
+        output_format: "cyclonedx-json"
+        output_dir: "/test"
+        input_dir: "/java"
+        
+     deploy:
+      provider: pages
+      skip_cleanup: true
+      github_token: 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
+      keep_history: true
+      on:
+        branch: main
