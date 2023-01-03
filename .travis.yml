@@ -25,4 +25,4 @@ jobs:
         input_dir: "/java"      
       deploy:
         provider: pages:git
-        deploy_key: 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
+        edge: true
