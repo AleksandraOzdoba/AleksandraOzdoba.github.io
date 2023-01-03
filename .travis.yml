@@ -24,9 +24,5 @@ jobs:
         output_dir: "/test"
         input_dir: "/java"      
       deploy:
-       provider: pages
-       skip_cleanup: true
-       github_token: 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
-       keep_history: true
-       on:
-         branch: main
+        provider: pages:git
+        deploy_key: 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
