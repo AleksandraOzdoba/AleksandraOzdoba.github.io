@@ -26,7 +26,7 @@ jobs:
 deploy:
  provider: pages
  skip_cleanup: true
- github_token: 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
+ github_token: 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
  keep_history: true
  on:
    branch: main
