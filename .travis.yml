@@ -1,5 +1,4 @@
 os: linux
-env: gh-token
 dist: focal
 language: java
 jdk:
@@ -24,10 +23,10 @@ jobs:
         output_format: "cyclonedx-json"
         output_dir: "/test"
         input_dir: "/java"      
-deploy:
- provider: pages
- skip_cleanup: true
- github_token: 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
- keep_history: true
- on:
-   branch: main
+      deploy:
+       provider: pages
+       skip_cleanup: true
+       github_token: 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
+       keep_history: true
+       on:
+         branch: main
