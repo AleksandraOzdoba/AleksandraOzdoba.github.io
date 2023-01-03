@@ -26,3 +26,5 @@ jobs:
       deploy:
         provider: pages:git
         edge: true
+        on:
+            branch: main
